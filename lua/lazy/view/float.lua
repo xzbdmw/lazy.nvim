@@ -158,6 +158,7 @@ function M:mount()
     vim.bo[self.backdrop_buf].buftype = "nofile"
     vim.bo[self.backdrop_buf].filetype = "lazy_backdrop"
   end
+  self.win_opts.zindex = 33
 
   self:layout()
   self.win = vim.api.nvim_open_win(self.buf, true, self.win_opts)
@@ -252,7 +253,7 @@ end
 ---@param fn fun(self?)
 ---@param desc? string
 ---@param mode? string[]
-function M:on_key(key, fn, desc,mode)
+function M:on_key(key, fn, desc, mode)
   vim.keymap.set(mode or "n", key, function()
     fn(self)
   end, {

@@ -31,7 +31,7 @@ M.keys = {
   diff = "d",
   close = "q",
   details = "<cr>",
-  profile_sort = "<C-s>",
+  profile_sort = "gs",
   profile_filter = "<C-f>",
   abort = "<C-c>",
 }
